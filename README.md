@@ -750,6 +750,23 @@ out["out.c", true]("// start\n"); // out.c emptied first
 - Paths are used as given, relative to the working directory, and compared byte for byte.
 - A file that cannot be opened is a runtime error. So is reading a path that `out` has already written in this run, or writing a path that `in` has already read.
 
+### 10.7 Compiler flags
+```text
+luma <file.luma> [-o out | -d tokens|ast|asm]
+luma -h
+luma -v
+```
+| Flag | Effect |
+|---|---|
+| `-o out` | Writes the compiled program to `out` |
+| `-d tokens` | Prints the tokens of `file.luma` and stops |
+| `-d ast` | Prints the syntax tree of `file.luma` and stops |
+| `-d asm` | Prints the generated assembly and stops |
+| `-h` | Prints usage to standard output and exits with status `0` |
+| `-v` | Prints `luma <version>` and exits with status `0` |
+
+`-o` and `-d` cannot be combined. Run without arguments, `luma` prints usage to standard error and exits with status `1`. A compile-time error exits with status `1`.
+
 ## 11. Runtime errors and undefined behavior
 
 ### 11.1 Runtime errors
