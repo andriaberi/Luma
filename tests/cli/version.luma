@@ -1,0 +1,3 @@
+// args: -v
+// expect:
+// luma 0.1.0

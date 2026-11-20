@@ -2,6 +2,7 @@
 #
 #   make          build build/luma
 #   make clean    delete build/
+#   make test     run tests: make test [update] [folder | folder/test ...]
 #   make help     list targets
 
 CC      ?= cc
@@ -23,6 +24,16 @@ build/%.o: src/%.c makefile
 	@mkdir -p $(@D)
 	$(CC) -std=c11 $(WARN) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c -o $@ $<
 
+# Words after "test" (update, cli, lex/strings) go to the test runner, not to make.
+ifeq (test,$(firstword $(MAKECMDGOALS)))
+TEST_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+$(eval $(TEST_ARGS):;@:)
+.PHONY: $(TEST_ARGS)
+endif
+
+test: $(BIN)
+	@tests/run.sh $(TEST_ARGS)
+
 clean:
 	rm -rf build
 
@@ -31,4 +42,4 @@ help:
 
 -include $(OBJ:.o=.d)
 
-.PHONY: all clean help
+.PHONY: all clean help test

@@ -1,0 +1,3 @@
+// args: -h
+// expect:
+// usage: luma <file.luma> [-o out | -d tokens|ast|asm]
