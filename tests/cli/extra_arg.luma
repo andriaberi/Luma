@@ -1,0 +1,5 @@
+// args: {file} -d tokens extra
+// exit: 1
+// expect:
+// luma: unexpected argument 'extra'
+// usage: luma <file.luma> [-o out | -d tokens|ast|asm]

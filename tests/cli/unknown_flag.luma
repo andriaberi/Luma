@@ -1,0 +1,5 @@
+// args: {file} -x foo
+// exit: 1
+// expect:
+// luma: unknown option '-x'
+// usage: luma <file.luma> [-o out | -d tokens|ast|asm]

@@ -1,0 +1,4 @@
+// args: tests
+// exit: 1
+// expect:
+// luma: cannot read 'tests': Is a directory

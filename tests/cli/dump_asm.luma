@@ -1,0 +1,4 @@
+// args: {file} -d asm
+// exit: 1
+// expect:
+// luma: -d asm is not implemented yet

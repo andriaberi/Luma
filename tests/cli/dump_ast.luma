@@ -1,0 +1,4 @@
+// args: {file} -d ast
+// exit: 1
+// expect:
+// luma: -d ast is not implemented yet

@@ -1,0 +1,4 @@
+// args: nosuch.luma
+// exit: 1
+// expect:
+// luma: cannot read 'nosuch.luma': No such file or directory
