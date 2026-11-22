@@ -1,0 +1,84 @@
+#include "lexer/token.h"
+
+const char *token_name(TokenType type) {
+    switch (type) {
+        case TOK_EOF:            return "end of file";
+        case TOK_UNKNOWN:        return "unknown";
+        case TOK_IDENT:          return "identifier";
+        case TOK_INTEGER:        return "integer";
+        case TOK_CHARACTER:      return "character";
+        case TOK_STRING:         return "string";
+        case TOK_INT:            return "int";
+        case TOK_CHAR:           return "char";
+        case TOK_BOOL:           return "bool";
+        case TOK_CONST:          return "const";
+        case TOK_STRUCT:         return "struct";
+        case TOK_ENUM:           return "enum";
+        case TOK_FN:             return "fn";
+        case TOK_RETURN:         return "return";
+        case TOK_WHEN:           return "when";
+        case TOK_LOOP:           return "loop";
+        case TOK_BREAK:          return "break";
+        case TOK_CONTINUE:       return "continue";
+        case TOK_IMPORT:         return "import";
+        case TOK_EXPORT:         return "export";
+        case TOK_NEW:            return "new";
+        case TOK_DELETE:         return "delete";
+        case TOK_IN:             return "in";
+        case TOK_OUT:            return "out";
+        case TOK_ERR:            return "err";
+        case TOK_TRUE:           return "true";
+        case TOK_FALSE:          return "false";
+        case TOK_NULL:           return "null";
+        case TOK_UNDERSCORE:     return "_";
+        case TOK_LPAREN:         return "(";
+        case TOK_RPAREN:         return ")";
+        case TOK_LBRACKET:       return "[";
+        case TOK_RBRACKET:       return "]";
+        case TOK_LBRACE:         return "{";
+        case TOK_RBRACE:         return "}";
+        case TOK_COMMA:          return ",";
+        case TOK_SEMICOLON:      return ";";
+        case TOK_COLON:          return ":";
+        case TOK_DOT:            return ".";
+        case TOK_DOTDOT:         return "..";
+        case TOK_FAT_ARROW:      return "=>";
+        case TOK_ARROW:          return "->";
+        case TOK_AT:             return "@";
+        case TOK_AMP:            return "&";
+        case TOK_BANG:           return "!";
+        case TOK_TILDE:          return "~";
+        case TOK_PLUS:           return "+";
+        case TOK_MINUS:          return "-";
+        case TOK_STAR:           return "*";
+        case TOK_SLASH:          return "/";
+        case TOK_PERCENT:        return "%";
+        case TOK_SHL:            return "<<";
+        case TOK_SHR:            return ">>";
+        case TOK_PIPE:           return "|";
+        case TOK_CARET:          return "^";
+        case TOK_LT:             return "<";
+        case TOK_LE:             return "<=";
+        case TOK_GT:             return ">";
+        case TOK_GE:             return ">=";
+        case TOK_EQ:             return "==";
+        case TOK_NE:             return "!=";
+        case TOK_AND_AND:        return "&&";
+        case TOK_PIPE_PIPE:      return "||";
+        case TOK_ASSIGN:         return "=";
+        case TOK_PLUS_ASSIGN:    return "+=";
+        case TOK_MINUS_ASSIGN:   return "-=";
+        case TOK_STAR_ASSIGN:    return "*=";
+        case TOK_SLASH_ASSIGN:   return "/=";
+        case TOK_PERCENT_ASSIGN: return "%=";
+        case TOK_AMP_ASSIGN:     return "&=";
+        case TOK_PIPE_ASSIGN:    return "|=";
+        case TOK_CARET_ASSIGN:   return "^=";
+        case TOK_SHL_ASSIGN:     return "<<=";
+        case TOK_SHR_ASSIGN:     return ">>=";
+        case TOK_INC:            return "++";
+        case TOK_DEC:            return "--";
+    }
+
+    return "?";
+}
