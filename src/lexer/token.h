@@ -5,7 +5,7 @@ typedef enum {
     TOK_EOF,
     TOK_UNKNOWN,
 
-    // Tokens with text; main.c prints the lexeme for TOK_IDENT..TOK_STRING
+    // Tokens with text
     TOK_IDENT,
     TOK_INTEGER,
     TOK_CHARACTER,
