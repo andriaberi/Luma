@@ -1,0 +1,3 @@
+// args: {file} -d tokens
+// expect:
+// 4:1  TOK_EOF

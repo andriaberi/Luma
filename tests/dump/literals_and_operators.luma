@@ -1,0 +1,47 @@
+int x = 1;
+char c = 'z';
+[]char s = "hi";
+x += 2;
+x <<= 1;
+when [x >= 10] => out(s);
+
+// args: {file} -d tokens
+// expect:
+//  1:1  TOK_INT         int
+//  1:5  TOK_IDENT       x
+//  1:7  TOK_ASSIGN      =
+//  1:9  TOK_INTEGER     1
+//  1:10 TOK_SEMICOLON   ;
+//  2:1  TOK_CHAR        char
+//  2:6  TOK_IDENT       c
+//  2:8  TOK_ASSIGN      =
+//  2:10 TOK_CHARACTER   'z'
+//  2:13 TOK_SEMICOLON   ;
+//  3:1  TOK_LBRACKET    [
+//  3:2  TOK_RBRACKET    ]
+//  3:3  TOK_CHAR        char
+//  3:8  TOK_IDENT       s
+//  3:10 TOK_ASSIGN      =
+//  3:12 TOK_STRING      "hi"
+//  3:16 TOK_SEMICOLON   ;
+//  4:1  TOK_IDENT       x
+//  4:3  TOK_PLUS_ASSIGN +=
+//  4:6  TOK_INTEGER     2
+//  4:7  TOK_SEMICOLON   ;
+//  5:1  TOK_IDENT       x
+//  5:3  TOK_SHL_ASSIGN  <<=
+//  5:7  TOK_INTEGER     1
+//  5:8  TOK_SEMICOLON   ;
+//  6:1  TOK_WHEN        when
+//  6:6  TOK_LBRACKET    [
+//  6:7  TOK_IDENT       x
+//  6:9  TOK_GE          >=
+//  6:12 TOK_INTEGER     10
+//  6:14 TOK_RBRACKET    ]
+//  6:16 TOK_FAT_ARROW   =>
+//  6:19 TOK_OUT         out
+//  6:22 TOK_LPAREN      (
+//  6:23 TOK_IDENT       s
+//  6:24 TOK_RPAREN      )
+//  6:25 TOK_SEMICOLON   ;
+// 48:1  TOK_EOF

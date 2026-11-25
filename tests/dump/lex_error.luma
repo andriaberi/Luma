@@ -1,0 +1,9 @@
+int x = 1;
+int y = $;
+
+// args: {file} -d tokens
+// exit: 1
+// expect:
+// tests/dump/lex_error.luma:2:9: error: unexpected character '$'
+//     int y = $;
+//             ^
